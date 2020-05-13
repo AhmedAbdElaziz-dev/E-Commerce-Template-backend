@@ -44,9 +44,10 @@ router.post(
 );
 router.post("/uploadImage",(req,res,next)=>{
   const image = req.file;
-  const imageUrl = image.path
+  const imagepath = image.path
+  const imageUrl =imagepath.replace('\\','/');
   res.json({
-    imageUrl:imageUrl
+    imageUrl
   })
 })
 router.get(
